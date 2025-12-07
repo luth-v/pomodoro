@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0f0f0f;
+  --color-foreground: #161616;
+  --color-primary: #700c0c;
+
+  --animate-blink: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  30%,
+  100% {
+    opacity: 1;
+  }
+  50%,
+  70% {
+    opacity: 0;
+  }
+}
+
+:root {
+  font-family: Google Sans Flex, Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark light;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    background-color: var(--color-background);
+  }
+}
+
+button {
+  cursor: pointer;
+}
