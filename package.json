@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "bun --hot src/index.ts",
-    "build": "bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
+    "build": "bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --public-path=/pomodoro/ --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
     "start": "NODE_ENV=production bun src/index.ts",
-    "kill-port": "lsof -ti:3000 | xargs kill -9 || true"
+    "kill-port": "lsof -ti:3000 | xargs kill -9 || true",
+    "predeploy": "bun run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
@@ -23,6 +25,7 @@
     "@types/bun": "latest",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "bun-plugin-tailwind": "^0.1.2"
+    "bun-plugin-tailwind": "^0.1.2",
+    "gh-pages": "^6.3.0"
   }
 }
