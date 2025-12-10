@@ -26,7 +26,8 @@ export class TimerPage {
     this.timerInputButton = page.getByTestId("timer-input-button");
     this.countdownCirclePath = page
       .getByTestId("countdown-circle")
-      .locator("circle");
+      .locator("circle")
+      .nth(1);
     this.timerIncrementButton = page.getByTestId("timer-increment-button");
   }
 

@@ -8,18 +8,19 @@ import "./index.css";
 export function App() {
   return (
     <TimerProvider>
-      <div className="flex h-screen p-6">
+      <div className="flex h-screen p-12">
         <div className="h-full w-1/4">
           <Card />
         </div>
-        <div className="h-full flex-1 ml-6 z-20">
-          <Card className="h-full flex flex-col justify-center items-center">
+        <div className="h-full flex-1 ml-12 z-20">
+          <Card className="h-full flex flex-col justify-center items-center p-16">
             <div className="w-full">
               <Timer />
             </div>
           </Card>
         </div>
-        <div className="bg-background h-full w-1/4 flex flex-col justify-center">
+        <div className="h-full w-1/4"></div>
+        {/* <div className="bg-background h-full w-1/4 flex flex-col justify-center">
           <div className="w-full h-10 bg-[#131313]">
             <div className="bg-background w-full h-full rounded-bl-2xl" />
           </div>
@@ -29,7 +30,7 @@ export function App() {
           <div className="w-full h-10 bg-[#131313]">
             <div className="bg-background w-full h-full rounded-tl-2xl" />
           </div>
-        </div>
+        </div> */}
       </div>
     </TimerProvider>
   );

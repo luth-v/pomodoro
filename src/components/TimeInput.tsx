@@ -42,7 +42,7 @@ export function TimeInput({
   };
 
   const handleFocus = () => {
-    if (onFocus) onFocus();
+    if (onFocus) return onFocus();
     inputRef.current!.focus();
     setIsFocused(true);
   };
@@ -83,7 +83,7 @@ export function TimeInput({
       >
         <span
           className={cn(
-            isFocused && !inputRef.current!.value && "text-gray-500",
+            isFocused && !inputRef.current!.value && "text-neutral-600",
             className
           )}
           data-testid="timer-input-display"

@@ -24,20 +24,33 @@ export function Timer() {
   return (
     <div>
       <div className="aspect-square flex justify-center items-center relative">
-        <CountdownCircle
-          className={cn({
-            "stroke-red-900": timerContext.countdownState === "running",
-            "stroke-amber-800": timerContext.countdownState === "pause",
-            "fill-black/20": timerContext.countdownState === "finish",
-          })}
-          progress={timerContext.progress}
-        />
+        <div className="absolute w-full h-full">
+          <div
+            className={cn(
+              `w-full h-full bg-background absolute rounded-full neumorphic-in`,
+              {
+                "shadow-lg shadow-red-500": true,
+              }
+            )}
+          ></div>
+          <CountdownCircle
+            glow={
+              timerContext.countdownState === "running" ||
+              timerContext.countdownState === "pause"
+            }
+            className={cn({
+              "stroke-red-700": timerContext.countdownState === "running",
+              "stroke-amber-900": timerContext.countdownState === "pause",
+            })}
+            progress={timerContext.progress}
+          />
+        </div>
         <div className="relative flex flex-col justify-center items-center z-10">
           <TimeInput
             displayValue={displayValue}
             className={cn({
               "text-amber-700": timerContext.countdownState === "pause",
-              "text-red-900": timerContext.countdownState === "finish",
+              "text-red-900/60": timerContext.countdownState === "finish",
             })}
             defaultValue={timerContext.timer}
             onChange={timerContext.handleSetTimer}
@@ -82,7 +95,7 @@ const StartButton = ({ onClick }: { onClick: () => void }) => (
 
 const ResetButton = ({ onClick }: { onClick: () => void }) => (
   <Button
-    className="p-6 rounded-full"
+    className="p-6 rounded-full text-red-800"
     onClick={onClick}
     data-testid="reset-button"
   >

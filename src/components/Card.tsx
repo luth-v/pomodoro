@@ -8,7 +8,12 @@ export function Card({
   children?: React.ReactNode;
 }) {
   return (
-    <div className={cn("bg-foreground rounded-lg p-4", className)}>
+    <div
+      className={cn(
+        "rounded-4xl p-4 bg-linear-150 from-background from-60% to-foreground neumorphic-out",
+        className
+      )}
+    >
       {children}
     </div>
   );

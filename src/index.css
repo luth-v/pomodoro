@@ -38,3 +38,22 @@
 button {
   cursor: pointer;
 }
+
+.neumorphic-out {
+  box-shadow: -20px -20px 20px 0 rgba(255, 255, 255, 0.03),
+    -2px -2px 10px 0 rgba(255, 255, 255, 0.1),
+    20px 20px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+.neumorphic-out-sm {
+  box-shadow: -10px -10px 10px 0 rgba(255, 255, 255, 0.03),
+    -2px -2px 5px 0 rgba(255, 255, 255, 0.1),
+    10px 10px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.neumorphic-in {
+  box-shadow: inset -40px -40px 40px 0 rgba(255, 255, 255, 0.02),
+    inset -5px -5px 10px 0 rgba(255, 255, 255, 0.08),
+    inset 40px 40px 50px 0 rgba(0, 0, 0, 0.2),
+    inset 1px 1px 5px 0 rgba(0, 0, 0, 0.6);
+}

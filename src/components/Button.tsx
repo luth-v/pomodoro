@@ -10,10 +10,7 @@ interface ButtonProp extends ButtonHTMLAttributes<HTMLButtonElement> {
 export function Button({ onClick, className, children, ...props }: ButtonProp) {
   return (
     <button
-      className={cn(
-        "p-6 border border-neutral-800 hover:bg-neutral-800",
-        className
-      )}
+      className={cn("p-6 hover:bg-white/2 neumorphic-out-sm", className)}
       onClick={onClick}
       {...props}
     >

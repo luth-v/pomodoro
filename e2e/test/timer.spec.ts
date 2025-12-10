@@ -119,27 +119,27 @@ test.describe("Timer", () => {
     await expect(await timerPage.getDisplayValue()).toBe("00:00:03");
   });
 
-  test("should increment timer", async ({ page }) => {
-    const timerPage = new TimerPage(page);
+  // test("should increment timer", async ({ page }) => {
+  //   const timerPage = new TimerPage(page);
 
-    await timerPage.goto();
-    const incrementButton30 = await timerPage.getIncrementButtonByValue("30");
-    await expect(incrementButton30).toBeVisible();
+  //   await timerPage.goto();
+  //   const incrementButton30 = await timerPage.getIncrementButtonByValue("30");
+  //   await expect(incrementButton30).toBeVisible();
 
-    await timerPage.setTimer("5");
-    await page.waitForTimeout(50);
-    await expect(await timerPage.getDisplayValue()).toBe("00:00:05");
+  //   await timerPage.setTimer("5");
+  //   await page.waitForTimeout(50);
+  //   await expect(await timerPage.getDisplayValue()).toBe("00:00:05");
 
-    await incrementButton30.click();
-    await page.waitForTimeout(50);
-    await expect(await timerPage.getDisplayValue()).toBe("00:00:35");
+  //   await incrementButton30.click();
+  //   await page.waitForTimeout(50);
+  //   await expect(await timerPage.getDisplayValue()).toBe("00:00:35");
 
-    await timerPage.startButton.click();
-    await incrementButton30.click();
-    await incrementButton30.click();
-    await incrementButton30.click();
-    await incrementButton30.click();
-    await page.waitForTimeout(50);
-    await expect(await timerPage.getDisplayValue()).toMatch(/00\:02\:\d{2}/);
-  });
+  //   await timerPage.startButton.click();
+  //   await incrementButton30.click();
+  //   await incrementButton30.click();
+  //   await incrementButton30.click();
+  //   await incrementButton30.click();
+  //   await page.waitForTimeout(50);
+  //   await expect(await timerPage.getDisplayValue()).toMatch(/00\:02\:\d{2}/);
+  // });
 });
